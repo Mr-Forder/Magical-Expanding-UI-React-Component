@@ -8,8 +8,76 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
-  background: linear-gradient(to right, #2c5364, #203a43);
+  background: linear-gradient(to right, #0f0f0f, #2b2b2b);
 }
+
+
+h2{
+   /* Fallback: Set a background color. */
+   background-color: #CA4246;
+  font-size: 40px;
+   /* Create the gradient. */
+    background-image: linear-gradient(
+         45deg,
+         #CA4246 16.666%, 
+         #E16541 16.666%, 
+         #E16541 33.333%, 
+         #F18F43 33.333%, 
+         #F18F43 50%, 
+         #8B9862 50%, 
+         #8B9862 66.666%, 
+         #476098 66.666%, 
+         #476098 83.333%, 
+         #A7489B 83.333%);
+   
+   /* Set the background size and repeat properties. */
+   background-size: 100%;
+   background-repeat: repeat;
+ 
+   /* Use the text as a mask for the background. */
+   /* This will show the gradient as a text color rather than element bg. */
+   -webkit-background-clip: text;
+   background-clip: text;
+   -webkit-text-fill-color: transparent; 
+   
+   /* Animate the text when loading the element. */
+     /* This animates it on page load and when hovering out. */
+     animation: rainbow-text-simple-animation-rev 0.75s ease forwards;
+ 
+ }
+ 
+ .gradient-text:hover{
+     animation: rainbow-text-simple-animation 0.5s ease-in forwards;
+ }
+ 
+ 
+ /* Move the background and make it smaller. */
+ /* Animation shown when entering the page and after the hover animation. */
+ @keyframes rainbow-text-simple-animation-rev {
+     0% {
+         background-size: 650%;
+     }
+     40% {
+         background-size: 650%;
+     }
+     100% {
+         background-size: 100%;
+     }
+ }
+ 
+ /* Move the background and make it larger. */
+ /* Animation shown when hovering over the text. */
+ @keyframes rainbow-text-simple-animation {
+     0% {
+         background-size: 100%;
+     }
+     80% {
+         background-size: 650%;
+     }
+     100% {
+         background-size: 650%;
+     }
+ }
 
 .App {
   display: flex;
@@ -25,4 +93,42 @@ body {
 .card p {
   padding-top: 1rem;
   line-height: 150%;
+}
+.button{
+  border-radius: 5px;
+  background:#1AAB8A;
+  color:#fff;
+  border:none;
+  position:relative;
+  height:60px;
+  font-size:1.6em;
+  padding:0 2em;
+  cursor:pointer;
+  transition:800ms ease all;
+  outline:none;
+  margin:1rem 1rem 1rem 0rem;
+}
+.button:hover{
+  background:#fff;
+  color:#1AAB8A;
+}
+.button:before,button:after{
+  content:'';
+  position:absolute;
+  top:0;
+  right:0;
+  height:2px;
+  width:0;
+  background: #1AAB8A;
+  transition:400ms ease all;
+}
+.button:after{
+  right:inherit;
+  top:inherit;
+  left:0;
+  bottom:0;
+}
+.button:hover:before,button:hover:after{
+  width:100%;
+  transition:800ms ease all;
 }

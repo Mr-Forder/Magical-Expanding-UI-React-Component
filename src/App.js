@@ -13,7 +13,7 @@ function App() {
           setIsOpen(!isOpen);
         }}
       >
-        <motion.h2 layout="position">Welcome, mateyboy</motion.h2>
+        <motion.h2 layout="position">Welcome! Click me to expand me.</motion.h2>
         {isOpen && (
           <motion.div
             initial={{ opacity: 0 }}
@@ -29,7 +29,7 @@ function App() {
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum,
               rem.
             </p>
-            <button>Submit</button>
+            <button className="button">Submit</button>
           </motion.div>
         )}
       </motion.div>
